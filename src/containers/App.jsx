@@ -13,7 +13,7 @@ const App = () => {
   const [videos, setVideos] = useState([]); //hook useState
 
   useEffect(() => {
-    fetch("http://localhost:3000/initalState")
+    fetch("http://localhost:3000/initalState")  //el fetch es el llamado a la API
       .then(response => response.json())
       .then(data => setVideos(data));
   }, []);
