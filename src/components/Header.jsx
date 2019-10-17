@@ -12,7 +12,9 @@ const Header = props => {
   const { user } = props;
   const hasUser = Object.keys(user).length > 0;
 
-  const handleLogout = () => {};
+  const handleLogout = () => {
+    props.logoutRequest({});
+  };
 
   return (
     <header className="header">
@@ -58,9 +60,11 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps
+const mapDispatchToProps = {
+  logoutRequest
+};
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Header);
